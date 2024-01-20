@@ -149,5 +149,7 @@ def create_account(url, first_names, last_names):
                         print(v)
 
             current_accounts.append(result)
+        
+        print("Items for all accounts open: ")
 
         return result
