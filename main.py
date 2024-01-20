@@ -37,4 +37,5 @@ def main_creation():
         terminate_process(program_name)
 
 if __name__ == "__main__":
-    main_creation()
+    while True:
+        main_creation()
