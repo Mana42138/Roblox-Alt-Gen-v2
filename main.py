@@ -28,8 +28,7 @@ def main_creation():
         time.sleep(1)
     else:
         create_account(roblox_url, first_names, last_names)
-    item = input("Item: ")
-    print("Adding item!")
+    item = input("")
     save_altmanager_login(item, current_accounts)
     
     if readfile(settings_file)["AUTO_CLOSE_ROBLOX"]:
