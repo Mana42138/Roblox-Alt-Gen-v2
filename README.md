@@ -16,9 +16,6 @@ Utilizing the power of Selenium, this script ensures fast and efficient account 
 ### 4. Multi-Account Creation with Multi-Roblox
 For users who need to create multiple Roblox accounts simultaneously, the script offers multi-account creation functionality. This is particularly useful for those managing multiple accounts or participating in various Roblox activities.
 
-### 5. Multi-Roblox Threading (BETA)
-The multi-roblox threading feature, currently in BETA, allows users to create accounts concurrently through multiple threads. This can significantly speed up the account creation process.
-
 ## Getting Started
 
 1. Install the required dependencies by running:
