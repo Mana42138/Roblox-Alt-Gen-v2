@@ -38,8 +38,9 @@ def main_copy():
 
     keyboard.wait('f5')
 
-auto_copy = data["AUTO_COPY_CODES"]
+def autocopy():
+    auto_copy = data["AUTO_COPY_CODES"]
 
-if auto_copy:
-    thread_one = threading.Thread(target=main_copy)
-    thread_one.start()
+    if auto_copy:
+        thread_one = threading.Thread(target=main_copy)
+        thread_one.start()

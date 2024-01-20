@@ -12,6 +12,8 @@ settings = readfile(settings_file)
 if settings["MULTI_ROBLOX_THREADING"]:
     multi_roblox()
 
+threading.Thread(target=autocopy).start()
+
 def main_creation():
     settings = readfile(settings_file) 
     MULTI_ROBLOX_THREADING = settings["MULTI_ROBLOX_THREADING"]
