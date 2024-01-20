@@ -13,7 +13,7 @@ if settings["MULTI_ROBLOX_THREADING"]:
     multi_roblox()
 
 def main_creation():
-    settings = readfile(settings_file)
+    settings = readfile(settings_file) 
     MULTI_ROBLOX_THREADING = settings["MULTI_ROBLOX_THREADING"]
     MAX_WINDOWS = settings["MAX_WINDOWS"]
 
@@ -35,6 +35,6 @@ def main_creation():
     
     if readfile(settings_file)["AUTO_CLOSE_ROBLOX"]:
         terminate_process(program_name)
-    
+
 if __name__ == "__main__":
     main_creation()
