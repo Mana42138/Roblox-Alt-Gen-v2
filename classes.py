@@ -1,5 +1,4 @@
 from roblox_auth import *
-from selenium import webdriver
 from requests import *
 from functions.utility.http_imports import *
 from functions.utility.filesys import *

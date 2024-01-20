@@ -2,37 +2,36 @@ import os
 import sys
 import json
 
-def files_path():
-    return os.path.dirname(os.path.abspath(sys.argv[0]))
+files_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+User_folder = os.path.join(files_path, "User")
+if not os.path.exists(User_folder):
+    os.makedirs(User_folder)
 
-def User_folder():
-    User_folders = os.path.join(files_path(), "User")
-    if not os.path.exists(User_folders):
-        os.makedirs(User_folders)
-    return User_folders
+text_files_folder = os.path.join(User_folder, "Accounts")
+text_file = os.path.join(text_files_folder, f"Accounts.txt")
+text_file2 = os.path.join(text_files_folder, f"AltManagerLogin.txt")
+
+settings_file = os.path.join(User_folder, "settings.json")
+
 
 def readfile(datafile):
     try:
-        with open(os.path.join(files_path(), datafile), "r") as file:
+        with open(datafile, "r") as file:
             data = json.load(file)
         return data
     except:
-        with open(os.path.join(files_path(), datafile), "r") as file:
+        with open(datafile, "r") as file:
             return file.read()
         
 def writefile(datafile, data):
     try:
-        with open(os.path.join(files_path(), datafile), "w") as file:
+        with open(datafile, "w") as file:
             json.dump(data, file, indent=4)
     except json.decoder.JSONDecodeError:
-        with open(os.path.join(files_path(), datafile), "w") as file:
+        with open(datafile, "w") as file:
             file.write(data)
 
 def makeAccountFiles():
-    Accounts_path = User_folder()
-    text_files_folder = os.path.join(Accounts_path, "Accounts")
-    text_file = os.path.join(text_files_folder, f"Accounts.txt")
-    text_file2 = os.path.join(text_files_folder, f"AltManagerLogin.txt")
     if not os.path.exists(text_files_folder):
         os.makedirs(text_files_folder)
 
@@ -41,4 +40,16 @@ def makeAccountFiles():
 
     if not os.path.exists(text_file2):
         open(text_file2, "w").close()
-    
+
+# Save account information to text file
+def save_account_info(account_info):
+    with open(text_file, 'a') as file:
+        file.write(f"Username: {account_info[1]}\nPassword: {account_info[2]}\nCookie: {account_info[0]}\n\n\n")
+
+# Save login information for AltManager
+def save_altmanager_login(item, current_accounts):
+    for data in current_accounts:
+        with open(text_file2, 'a') as file:
+            file.write(f"{data[1]}:{data[2]}: Item {item}\n")
+
+    current_accounts.clear()

@@ -1,8 +1,6 @@
 from .filesys import *
 from .status import status
 
-settings_file = os.path.join(User_folder(), "settings.json")
-
 def Settings_Setup():
     if not os.path.exists(settings_file):
         status("Initializing first time setup...")
@@ -53,3 +51,4 @@ def Settings_Setup():
             "MAX_WINDOWS": int(MAX_WINDOWS)
         }
         writefile(settings_file, data)
+
