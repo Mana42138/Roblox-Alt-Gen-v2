@@ -21,17 +21,16 @@ word_list = [
 
 index = 0
 
+# Auto copy codes for spesific games
 def copy_next_word(event):
     global index
-    if event.name == COPY_CODES_KEY:  # you can change 'f' to any key
+    if event.name == COPY_CODES_KEY:
         if index < len(word_list):
             word_to_copy = word_list[index]
             index += 1
             pyperclip.copy(word_to_copy)
-            # print(f"Copied: {word_to_copy}")
         else:
             index = 0
-            # print("End of the list. Restarting...")
 
 def main_copy():
     keyboard.on_press(copy_next_word)
