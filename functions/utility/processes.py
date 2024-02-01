@@ -1,5 +1,6 @@
 import psutil
 
+# Kill/terminate any open process with a spesific name <process_name, RobloxPlayerBeta.exe>
 def terminate_process(process_name):
     for proc in psutil.process_iter(['name']):
         if proc.info['name'] == process_name:
