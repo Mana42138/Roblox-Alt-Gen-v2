@@ -14,12 +14,12 @@ if settings["MULTI_ROBLOX_THREADING"]:
 
 threading.Thread(target=autocopy).start()
 
+# Function for generating accounts
 def main_creation():
     settings = readfile(settings_file) 
     MULTI_ROBLOX_THREADING = settings["MULTI_ROBLOX_THREADING"]
     MAX_WINDOWS = settings["MAX_WINDOWS"]
 
-    # Multi roblox is still in BETA!
     if MULTI_ROBLOX_THREADING:
         global ActualWindows
         
