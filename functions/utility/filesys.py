@@ -13,7 +13,7 @@ text_file2 = os.path.join(text_files_folder, f"AltManagerLogin.txt")
 
 settings_file = os.path.join(User_folder, "settings.json")
 
-
+# ReadFile both json & more
 def readfile(datafile):
     try:
         with open(datafile, "r") as file:
@@ -22,7 +22,8 @@ def readfile(datafile):
     except:
         with open(datafile, "r") as file:
             return file.read()
-        
+
+# Write files both Json & more
 def writefile(datafile, data):
     try:
         with open(datafile, "w") as file:
