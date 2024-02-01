@@ -1,6 +1,7 @@
 from .filesys import *
 from .status import status
 
+# First time setup making config
 def Settings_Setup():
     if not os.path.exists(settings_file):
         status("Initializing first time setup...")
