@@ -1,6 +1,7 @@
 from .status import *
 from requests import *
 
+# Gets the usernames used for acount generation
 def get_usernames():
     status("Getting first names...")
     first_names_response = get("https://raw.githubusercontent.com/Mana42138/Gen-RX/main/firstnames.txt")
@@ -15,6 +16,7 @@ def get_usernames():
         status("Name loading failed. Re-Execute the script.")
         return False, False
 
+# Get Codes from github using a get request
 def get_codes():
     codes = get("https://raw.githubusercontent.com/Mana42138/Gen-RX/main/codes.txt")
     if codes.status_code != 200:
